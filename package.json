@@ -52,8 +52,8 @@
 			"dist/nodes/ZaloOAWebhook/ZaloOAWebhook.node.js"
 		],
 		"nodeTypes": [
-			"n8n-nodes-zalo-oa-integration.zaloOA",
-			"n8n-nodes-zalo-oa-integration.zaloOAWebhook"
+			"n8n-nodes-zalo-oa-integration-v2.zaloOA",
+			"n8n-nodes-zalo-oa-integration-v2.zaloOAWebhook"
 		]
 	},
 	"devDependencies": {
