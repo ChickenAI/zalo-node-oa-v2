@@ -1,0 +1,77 @@
+{
+	"name": "n8n-nodes-zalo-oa-integration-v2",
+	"version": "0.5.14",
+	  "description": "Tích hợp Zalo Official Account API v2.0 vào n8n",
+	  "keywords": [
+	    "n8n-community-node-package",
+	    "zalo",
+	    "zalo-oa",
+	    "zalo-api-v2",
+	    "zalo-messagev2",
+	    "messaging"
+	  ],
+	"license": "MIT",
+	"homepage": "https://github.com/ChickenAI/zalo-node-oa",
+	"author": {
+		"name": "Chicken AI Team",
+		"email": "phamsycang@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ChickenAI/zalo-node-oa.git"
+	},
+	"engines": {
+		"node": ">=18.10",
+		"pnpm": ">=9.1"
+	},
+	"packageManager": "pnpm@9.1.4",
+	"main": "index.js",
+	"scripts": {
+		"preinstall": "npx only-allow pnpm",
+		"build": "tsc && gulp build:icons && gulp build:schemas",
+		"dev": "tsc --watch",
+		"format": "prettier nodes credentials --write",
+		"lint": "eslint nodes credentials package.json",
+		"lintfix": "eslint nodes credentials package.json --fix",
+		"prepublishOnly": "pnpm build"
+	},
+	"files": [
+		"dist/credentials/ZaloOAApi.credentials.js",
+		"dist/nodes/ZaloOA",
+		"dist/nodes/ZaloOAWebhook",
+		"dist/nodes/ZaloOA/ZaloOA.node.schema.json",
+		"dist/nodes/ZaloOAWebhook/ZaloOAWebhook.node.schema.json"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/ZaloOAApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/ZaloOA/ZaloOA.node.js",
+			"dist/nodes/ZaloOAWebhook/ZaloOAWebhook.node.js"
+		],
+		"nodeTypes": [
+			"n8n-nodes-zalo-oa-integration.zaloOA",
+			"n8n-nodes-zalo-oa-integration.zaloOAWebhook"
+		]
+	},
+	"devDependencies": {
+		"@types/form-data": "^2.5.0",
+		"@types/node": "^20.10.0",
+		"@typescript-eslint/parser": "^7.15.0",
+		"eslint": "^8.56.0",
+		"eslint-plugin-n8n-nodes-base": "^1.16.1",
+		"gulp": "^4.0.2",
+		"prettier": "^3.3.2",
+		"typescript": "^5.5.3"
+	},
+	"dependencies": {
+		"axios": "^1.6.0",
+		"form-data": "^4.0.0",
+		"sqlite3": "^5.1.7"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
